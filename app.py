@@ -1,7 +1,9 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import joblib
 
 app = Flask(__name__)
+CORS(app) #Enable CORS for all routes
 
 # Load the pre-trained diabetes model
 diabetes_model = joblib.load("models/diabetes_model.sav")
